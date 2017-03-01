@@ -1,0 +1,19 @@
+{
+  "name": "AnaliveryServer",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Delivery Analitcs",
+  "repository": "https://github.com/angular/angular-seed",
+  "license": "AppCriativo",
+  "dependencies": {
+    "hapi": "^13.x",
+    "hapi-auth-cookie": "^6.x",
+    "hapi-authorization": "^3.x",
+    "inert": "^4.x",
+    "joi": "^8.x",
+    "lout": "^9.x",
+    "mysql": "^2.x",
+    "sequelize": "^3.x",
+    "vision": "^4.x"
+  }
+}
