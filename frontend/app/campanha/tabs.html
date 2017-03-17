@@ -1,0 +1,36 @@
+<section class="content">
+    <div class="col-md-7 col-offset-2">
+        <div class="nav" ng-controller="CampanhaCrtl as caCtrl">
+            <ul class="nav nav-tabs">
+                <li>
+                    <a href data-target="#tabInfoBasic" data-toggle="tab">
+                        Informações Básicas
+                    </a>
+                </li>
+                <li >
+                    <a href data-target="#tabHistory" data-toggle="tab">
+                        História do seu Projeto
+                    </a>
+                </li>
+                <li>
+                    <a href data-target="#tabRecompensa" data-toggle="tab">
+                        Recompensas
+                    </a>
+                </li>
+                <li>
+                    <a href data-target="#tabEquipe" data-toggle="tab">
+                        Equipe
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane" id="tabInfoBasic" ng-include="'campanha/form/criarCampanha.html'" ng-class="{active: caCtrl.tabInfoBasic}"></div>
+                <div class="tab-pane" id="tabHistory" ng-include="'campanha/form/criarHistoriaProjeto.html'"></div>
+                <div class="tab-pane" id="tabRecompensa" ng-include="'campanha/form/criarRecompensa.html'"></div>
+                <div class="tab-pane" id="tabEquipe" ng-include="'campanha/form/criarEquipe.html'"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">.col-md-3</div>
+</section>

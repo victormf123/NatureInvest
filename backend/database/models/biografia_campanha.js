@@ -10,7 +10,9 @@ var model = null;
 exports.getModel = function(){
     if (model == null){
         model = Db.define('biografia_campanha',definition, options);
+
     }
+
     return model;
 };
 
@@ -37,7 +39,6 @@ const definition = {
         type              :Sql.STRING,
         allowNull         :false
     }
-
 
 };
 

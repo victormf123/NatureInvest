@@ -14,12 +14,14 @@ exports.route = function (server) {
             handler: Handler.novaRecompensa,
             validate: {
                 payload: {
-                    valor: Joi.string().max(255).required(),
-                    descricao: Joi.string().required(),
-                    entrega: Joi.date().required(),
-                    detalhes: Joi.string().max(255).required(),
-                    limitado: Joi.boolean().required(),
-                    limite: Joi.number().optional()
+                    recompensa: Joi.boolean(),
+                    valor: Joi.string().max(255).allow(''),
+                    descricao: Joi.string().allow(''),
+                    entrega: Joi.date().allow(''),
+                    detalhes: Joi.string().allow(''),
+                    limitado: Joi.boolean().allow(''),
+                    limite: Joi.number().allow(''),
+                    campanhaId: Joi.number()
                 }
             }/* for now user will be created default,
              auth: {
@@ -43,12 +45,12 @@ exports.route = function (server) {
                     id : Joi.number().required()
                 },
                 payload: {
-                    valor: Joi.string().max(255).required(),
-                    descricao: Joi.string().required(),
-                    entrega: Joi.date().required(),
-                    detalhes: Joi.string().max(255).required(),
-                    limitado: Joi.boolean().required(),
-                    limite: Joi.number().optional()
+                    valor: Joi.string().max(255),
+                    descricao: Joi.string(),
+                    entrega: Joi.date(),
+                    detalhes: Joi.string(),
+                    limitado: Joi.boolean(),
+                    limite: Joi.number()
                 }
             }/* for now user will be created default,
              auth: {

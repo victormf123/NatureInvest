@@ -1,0 +1,49 @@
+<div class="row">
+    <table class="table">
+        <tbody class="form-group" ng-repeat="equipe in caCtrl.campanha.equipe">
+            <tr>
+                <td>
+                    <label>Nome</label>
+                </td>
+                <td>
+                    <input ng-model="equipe.nome" type="text" name="nome" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email</label>
+                </td>
+                <td>
+                    <input ng-model="equipe.email" type="text" name="email" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Telefone</label>
+                </td>
+                <td>
+                    <input ng-model="equipe.telefone" type="text" name="telefone" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Função</label>
+                </td>
+                <td>
+                    <input ng-model="equipe.funcao" type="text" name="funcao" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="form-group">
+                        <button type="button" ng-click="caCtrl.addEquipe($index)" class="btn btn-default">Adicionar Membro</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <button type="button" ng-click="caCtrl.createEquipe(caCtrl.idCampanha)" class="btn btn-default">Próximo passo</button>
+    </div>
+</div>

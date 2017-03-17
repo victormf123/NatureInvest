@@ -1,0 +1,49 @@
+<div class="row">
+    <table class="table">
+        <tbody class="form-group" ng-repeat="equipe in caCtrl.campanha.equipe">
+        <tr class="form-group">
+            <td>
+                <label>Vídeo do Projeto</label>
+            </td>
+            <td>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>Procurar arquivo</button>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Descrição do Projeto</label>
+            </td>
+            <td>
+                <textarea ng-model="caCtrl.biografiacampanha.descricao_projeto" class="note-codable"></textarea>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Pessoas Envolvidas</label>
+            </td>
+            <td>
+                <textarea ng-model="caCtrl.biografiacampanha.pessoas_envolvida" class="note-codable"></textarea>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Impacto Quantitativo</label>
+            </td>
+            <td>
+                <input ng-model="caCtrl.biografiacampanha.impacto_quantitativo" type="text" name="impacto_quantitativo" class="form-control">
+            </td>
+            <td>
+                <input ng-model="caCtrl.biografiacampanha.quantificador" type="text" name="quantificador" placeholder="Adicione um quantificador" class="form-control">
+            </td>
+            <td>
+                <button type="button" ng-click="" class="btn btn-default">Adicionar</button>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <button type="button" ng-click="caCtrl.createHistoriaProjeto(caCtrl.campanha.id)" data-target="#tabRecompensa" data-toggle="tab" class="btn btn-default">Próximo passo</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

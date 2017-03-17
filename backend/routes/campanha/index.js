@@ -17,6 +17,7 @@ exports.route = function (server) {
                     titulo: Joi.string().max(255).required(),
                     orcamento: Joi.number().required(),
                     moeda: Joi.string().required(),
+                    status: Joi.string().required(),
                     localidade: Joi.string().required(),
                     dataInicial: Joi.date().required(),
                     dataFinal: Joi.date().required(),

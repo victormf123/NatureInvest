@@ -2,13 +2,13 @@
  * Created by matheus on 27/02/17.
  */
 const biografia_campanha = require('../../database/models/biografia_campanha').getModel();
+const campanha = require('../../database/models/campanha').getModel();
 
 exports.novaBiografiaCampanha = function (req, resp) {
-    biografia_campanha.create(req.payload)
 
-        .then(function () {
-            console.log('ok');
-            resp('');
+    biografia_campanha.create(req.payload)
+        .then(function (bio) {
+            resp(bio);
         })
 
         .catch(function (err) {

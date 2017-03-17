@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="natureInvest" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Primeira App</title>
+    <link rel="stylesheet" href="/assets/css/deps.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <header ng-include="'/template/header.html'"></header>
+        <div ui-view ></div>
+        <footer ng-include="'/template/footer.html'"></footer>
+    </div>
+    <script src="/assets/js/deps.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+
+</body>
+</html>

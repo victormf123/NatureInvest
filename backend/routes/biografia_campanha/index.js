@@ -17,8 +17,9 @@ exports.route = function (server) {
                 payload: {
                     descricao_projeto: Joi.string().required(),
                     pessoas_envolvida: Joi.string().required(),
-                    impacto_quantitativo: Joi.string().optional(),
-                    quantificador: Joi.string().optional()
+                    impacto_quantitativo: Joi.string().required(),
+                    quantificador: Joi.string().required(),
+                    campanhaId: Joi.number()
                 }
             }/* for now user will be created default,
              auth: {

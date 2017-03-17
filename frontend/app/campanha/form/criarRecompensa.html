@@ -1,0 +1,96 @@
+<div class="row">
+    <table>
+        <tbody class="form-group" ng-repeat="equipe in caCtrl.campanha.equipe">
+        <tr class="form-group">
+            <td>
+                <label>Recompensa</label>
+            </td>
+            <td>
+                <ul style="list-style: none">
+                    <li>
+                        <input type="radio" name="gender" ng-model="caCtrl.recompensa.recompensa" value="false"> Sem recompensa
+                    </li>
+                    <li>
+                        <input type="radio" name="gender" ng-model="caCtrl.recompensa.recompensa" value="true"> Com Recompensa
+                    </li>
+                </ul>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <tbody>
+        <tr class="form-group">
+            <td>
+                <label>Valor pedido</label>
+            </td>
+            <td>
+                <input ng-model="caCtrl.recompensa.valor" type="text"  name="titulo" class="form-control" id="" >
+            </td>
+            <td>
+                <select class="dropdown" ng-model="caCtrl.recompensa.moeda" name="modeda">
+                    <option value="BRLS [R$]">BRLS [R$]</option>
+                    <option value="Dollars [U$]">Dollars [U$]</option>
+                    <option value="Euro [E$]">Euro [E$]</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Descrição</label>
+            </td>
+            <td>
+                <textarea ng-model="caCtrl.recompensa.descricao" class="note-codable"></textarea>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Estimativa de entrega</label>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" id="dropdownDataEntrega" role="button" data-toggle="dropdown">
+                        <div class="input-group"><input type="text" class="form-control"  ng-model="caCtrl.recompensa.entrega" ><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker ng-model="caCtrl.recompensa.entrega"  data-datetimepicker-config="{ dropdownSelector: '#dropdownDataEntrega' }"/>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Detalhes de envio</label>
+            </td>
+            <td>
+                <select class="dropdown" ng-model="caCtrl.recompensa.detalhes" name="modeda">
+                    <option value="BRLS [R$]">Sem Envio</option>
+                    <option value="Dollars [U$]">Apenas para certos Paises</option>
+                    <option value="Euro [E$]">Internacional</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>N de Apoiadores</label>
+            </td>
+            <td>
+                <input type="checkbox" ng-model="caCtrl.recompensa.limitado" name="limitado" value="true">Quantidade Limitada<br>
+            </td>
+            <td>
+                <input ng-model="caCtrl.recompensa.limite" type="number"  name="titulo" class="form-control" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" ng-click="" class="btn btn-default">Adicionar linha</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <button type="button" ng-click="caCtrl.createRecompensa(caCtrl.campanha.id)" data-target="#tabEquipe" data-toggle="tab" class="btn btn-default">Próximo Passo</button>
+    </div>
+</div>

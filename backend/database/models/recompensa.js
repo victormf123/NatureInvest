@@ -22,21 +22,25 @@ const definition = {
         autoIncrement   : true,
         unique          : true
     },
+    recompensa: {
+        type            : Sql.BOOLEAN,
+        allowNull       : false
+    },
     valor : {
         type            : Sql.STRING,
-        allowNull       : false
+        allowNull       : true
     },
     descricao : {
         type            : Sql.TEXT,
-        allowNull       : false
+        allowNull       : true
     },
     entrega : {
         type            : Sql.DATE,
-        allowNull       : false
+        allowNull       : true
     },
     detalhes : {
         type            : Sql.STRING,
-        allowNull       : false
+        allowNull       : true
     },
     limitado: {
         type            : Sql.BOOLEAN,

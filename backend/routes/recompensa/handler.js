@@ -5,12 +5,9 @@ const Recompensa = require('../../database/models/recompensa').getModel();
 
 exports.novaRecompensa = function (req, resp) {
     Recompensa.create(req.payload)
-
-        .then(function () {
-            console.log('ok');
-            resp('');
+        .then(function (equipe) {
+            resp(equipe);
         })
-
         .catch(function (err) {
             console.log(err);
             resp().code(401);

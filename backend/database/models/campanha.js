@@ -40,6 +40,10 @@ const definition = {
       type              :Sql.STRING,
       allowNull         : false
     },
+    status:{
+      type              :Sql.STRING,
+        allowNull       :false
+    },
     localidade: {
       type              :Sql.STRING,
       allowNull         :false

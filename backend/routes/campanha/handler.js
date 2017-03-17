@@ -6,9 +6,8 @@ const Campanha = require('../../database/models/campanha').getModel();
 exports.novaCampanha = function (req, resp) {
     Campanha.create(req.payload)
 
-        .then(function () {
-            console.log('ok');
-            resp();
+        .then(function (campanha) {
+            resp(campanha);
         })
 
         .catch(function (err) {

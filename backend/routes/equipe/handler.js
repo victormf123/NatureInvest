@@ -6,9 +6,8 @@ const Equipe = require('../../database/models/equipe').getModel();
 exports.novaEquipe = function (req, resp) {
     Equipe.create(req.payload)
 
-    .then(function () {
-        console.log('ok');
-        resp('');
+    .then(function (equipe) {
+        resp(equipe);
     })
 
     .catch(function (err) {

@@ -1,0 +1,89 @@
+<div class="row">
+    <table class="table">
+        <tbody class="form-group" ng-repeat="equipe in caCtrl.campanha.equipe">
+        <tr class="form-group">
+            <td>
+                <label>Imagem do Projeto</label>
+            </td>
+            <td>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>Procurar arquivo</button>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Título do Projeto</label>
+            </td>
+            <td>
+                <input ng-model="caCtrl.campanha.titulo" type="text"  name="titulo" class="form-control" id="" >
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Meta de Orçamento</label>
+            </td>
+            <td>
+                <input ng-model="caCtrl.campanha.orcamento" type="text" name="orcamento" class="form-control">
+            </td>
+            <td>
+                <select class="dropdown" ng-model="caCtrl.campanha.moeda" name="modeda">
+                    <option value="BRLS [R$]">BRLS [R$]</option>
+                    <option value="Dollars [U$]">Dollars [U$]</option>
+                    <option value="Euro [E$]">Euro [E$]</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Escolhendo sua localidade</label>
+            </td>
+            <td>
+                <select class="dropdown" ng-model="caCtrl.campanha.localidade" name="localidade">
+                    <option value="DF">Brasília</option>
+                    <option value="AC">Acre</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Previsão de Inicio</label>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" id="dropdownDataInicial" role="button" data-toggle="dropdown">
+                        <div class="input-group"><input type="text" class="form-control"  ng-model="caCtrl.campanha.dataInicial" ><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker ng-model="caCtrl.campanha.dataInicial"  data-datetimepicker-config="{ dropdownSelector: '#dropdownDataInicial' }"/>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label>Previsão de Termino</label>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" id="dropdownDataFinal" role="button" data-toggle="dropdown">
+                        <div class="input-group"><input type="text" class="form-control"  ng-model="caCtrl.campanha.dataFinal" ><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker ng-model="caCtrl.campanha.dataFinal"  data-datetimepicker-config="{ dropdownSelector: '#dropdownDataFinal' }"/>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <button type="button" class="btn btn-danger">Apagar Projeto</button>
+            </td>
+            <td>
+                <button type="button" ui-sref="historiaProjeto" ng-click="caCtrl.createCampanha()" data-target="#tabHistory" data-toggle="tab" class="btn btn-default">Salvar e Prosseguir</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
