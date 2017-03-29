@@ -1,13 +1,13 @@
 
 <div class="row">
-    <div class="col-sm-18">
-        <div class="login">
-            <a href="#">login</a> | <a class="btn btn-default btn-xs" href="#">criar conta</a>
+    <div class="col-sm-18 ni-login">
+        <div class="navbar-right">
+            <a id="a-gray" href="#">login</a> | <a class="btn btn-default bt-green" href="#">criar conta</a>
         </div>
     </div>
 </div>
 <div class="row">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default ni-navbar" ng-controller="headerCrtl as heaCtrl">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header" id="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -16,49 +16,47 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ui-sref="home"><img src="../assets/img/marca-nature-invest.png" alt="Example" /></a>
+            <a ng-click="heaCtrl.clickInicio()" class="navbar-brand" ui-sref="home"><img src="../assets/img/marca-nature-invest.png" alt="Example" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/project/">invista<span class="sr-only">(current)</span></a></li>
-                <li><a ui-sref="tabs">criar campanha</a></li>
-                <li><a href="#">como funciona</a></li>
-                <li>         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">admin <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/report/">Dashboard</a></li>
-                        <li><a href="/bundles/naturebase/images/forum1.jpg" target="_blank">Fórum Índice</a></li>
-                        <li><a href="/bundles/naturebase/images/forum2.jpg" target="_blank">Fórum Tópico</a></li>
-                        <li><a href="/project/evaluation">Avaliação</a></li>
-                        <li><a href="/project/closing">Fechamento</a></li>
-                    </ul></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <p class="navbar-btn">
-                        <a href="#" class="btn btn-default btn-xs">PT</a>
-                        <a href="#">EN</a>
-                        <a href="#">ES</a>
-                        <a href="#">NL</a>
-                    </p>
-                </li>
-                <li>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <div id="search_container">
-                                <div class="input-group stylish-input-group">
-                                    <input type="text" class="form-control"  placeholder="Search" >
-                                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                                </div>
-                            </div>            </div>
-                    </form>
-                </li>
-            </ul>
+            <div class="espaco ni-nav-ul">
+                <ul class="nav navbar-nav">
+                    <li ng-click="heaCtrl.clickInvista()" ng-class="{amenu: heaCtrl.tabInvista == true}"><a href>invista<span class="sr-only">(current)</span></a></li>
+                    <li ng-click="heaCtrl.clickCriarCamapanha()" ng-class="{amenu: heaCtrl.tabcriarCampanha == true}"><a ui-sref="tabs">criar campanha</a></li>
+                    <li ng-click="heaCtrl.clickComoFunciona()" ng-class="{amenu: heaCtrl.tabComoFunciona == true}"><a href>como funciona</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">admin <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/report/">Dashboard</a></li>
+                            <li><a href="/bundles/naturebase/images/forum1.jpg" target="_blank">Fórum Índice</a></li>
+                            <li><a href="/bundles/naturebase/images/forum2.jpg" target="_blank">Fórum Tópico</a></li>
+                            <li><a href="/project/evaluation">Avaliação</a></li>
+                            <li><a href="/project/closing">Fechamento</a></li>
+                        </ul></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-btn">
+                            <a href="#" class="btn btn-default btn-xs bt-green">PT</a>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </p>
+                    </li>
+                    <li>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control"  placeholder="Search" >
+                                <button class="btn btn-default bt-green" type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </div><!-- /.navbar-collapse -->
     </nav>
 </div>

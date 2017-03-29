@@ -1,7 +1,6 @@
 /**
- * Created by matheus on 27/02/17.
+ * Created by matheus on 27/03/17.
  */
-
 var Handler = require('./handler.js');
 var Project = require('../../project');
 
@@ -10,14 +9,14 @@ var Joi = require('joi');
 exports.route = function (server) {
     server.route({
         method: 'POST',
-        path: '/biografiacampanha/',
+        path: '/impactoQuantitativo/',
         config: {
-            handler: Handler.novaBiografiaCampanha,
+            handler: Handler.novaImpactoQuantitativo,
             validate: {
                 payload: {
-                    descricao_projeto: Joi.string().required(),
-                    pessoas_envolvida: Joi.string().required(),
-                    campanhaId: Joi.number()
+                    descricao: Joi.string().allow(''),
+                    quantidade: Joi.string().allow(''),
+                    campanhaId: Joi.number().allow('')
                 }
             }/* for now user will be created default,
              auth: {
@@ -33,18 +32,17 @@ exports.route = function (server) {
 
     server.route({
         method: 'PUT',
-        path: '/biografiacampanha/{id}',
+        path: '/impactoQuantitativo/{id}',
         config: {
-            handler: Handler.editaBiografiaCampanha,
+            handler: Handler.editaImpactoQuantitativo,
             validate: {
-                params: {
-                    id: Joi.number().required()
+                params:{
+                    id : Joi.number().required()
                 },
                 payload: {
-                    descricao_projeto: Joi.string().required(),
-                    pessoas_envolvida: Joi.string().required(),
-                    impacto_quantitativo: Joi.string().max(255).required(),
-                    quantificador: Joi.string().optional()
+                    descricao: Joi.string().allow(''),
+                    quantidade: Joi.string().allow(''),
+                    campanhaId: Joi.number().allow('')
                 }
             }/* for now user will be created default,
              auth: {
@@ -60,9 +58,9 @@ exports.route = function (server) {
 
     server.route({
         method: 'GET',
-        path: '/biografiacampanha/',
+        path: '/impactoQuantitativo/',
         config: {
-            handler: Handler.listaBiografiaCampanha
+            handler: Handler.listaImpactoQuantitativo
             /* for now user will be created default,
              auth: {
              strategy: 'session'

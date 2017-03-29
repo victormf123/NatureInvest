@@ -1,49 +1,59 @@
 <div class="row">
+    <div class="tr-custom-form">
+        <table class="table">
+            <tr class="form-group">
+                <td class="col-lg-4">
+                    <label>Vídeo do Projeto</label>
+                </td>
+                <td class="col-lg-14">
+                    <button type="button" class="btn btn-default bt-green"><span class="espaco-right glyphicon glyphicon-folder-open" aria-hidden="true"></span>Procurar arquivo</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tr-custom-textarea">
+        <table class="table">
+            <tr class="form-group">
+                <td class="col-lg-4">
+                    <label>Descrição do Projeto</label>
+                </td>
+                <td class="col-lg-14">
+                    <textarea rows="10" ng-model="caCtrl.biografiacampanha.descricao_projeto" class="form-control"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tr-custom-textarea">
+        <table class="table">
+            <tr class="form-group">
+                <td class="col-lg-4">
+                    <label>Pessoas Envolvidas</label>
+                </td>
+                <td class="col-lg-14">
+                    <textarea rows="10" ng-model="caCtrl.biografiacampanha.pessoas_envolvida" class="form-control"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tr-custom-form" ng-repeat="impacto in caCtrl.listas.impactos">
+        <table class="table">
+            <tr class="form-group" >
+                <td class="col-lg-4">
+                    <label>Impacto Quantitativo</label>
+                </td>
+                <td class="col-lg-14">
+                    <input ng-model="impacto.descricao" type="text" name="impacto_quantitativo" >
+                    <input class="espaco" ng-model="impacto.quantidade" type="text" name="quantificador" placeholder="Adicione um quantificador" class="form-control">
+                    <button type="button" ng-click="caCtrl.addImpacto()" class="btn btn-default bt-green">Adicionar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
     <table class="table">
-        <tbody class="form-group" ng-repeat="equipe in caCtrl.campanha.equipe">
         <tr class="form-group">
             <td>
-                <label>Vídeo do Projeto</label>
-            </td>
-            <td>
-                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>Procurar arquivo</button>
+                <button type="button" ng-click="caCtrl.createHistoriaProjeto(caCtrl.campanha)" data-target="#tabRecompensa" data-toggle="tab" class="btn btn-default bt-green">Próximo passo</button>
             </td>
         </tr>
-        <tr class="form-group">
-            <td>
-                <label>Descrição do Projeto</label>
-            </td>
-            <td>
-                <textarea ng-model="caCtrl.biografiacampanha.descricao_projeto" class="note-codable"></textarea>
-            </td>
-        </tr>
-        <tr class="form-group">
-            <td>
-                <label>Pessoas Envolvidas</label>
-            </td>
-            <td>
-                <textarea ng-model="caCtrl.biografiacampanha.pessoas_envolvida" class="note-codable"></textarea>
-            </td>
-        </tr>
-        <tr class="form-group">
-            <td>
-                <label>Impacto Quantitativo</label>
-            </td>
-            <td>
-                <input ng-model="caCtrl.biografiacampanha.impacto_quantitativo" type="text" name="impacto_quantitativo" class="form-control">
-            </td>
-            <td>
-                <input ng-model="caCtrl.biografiacampanha.quantificador" type="text" name="quantificador" placeholder="Adicione um quantificador" class="form-control">
-            </td>
-            <td>
-                <button type="button" ng-click="" class="btn btn-default">Adicionar</button>
-            </td>
-        </tr>
-        <tr class="form-group">
-            <td>
-                <button type="button" ng-click="caCtrl.createHistoriaProjeto(caCtrl.campanha.id)" data-target="#tabRecompensa" data-toggle="tab" class="btn btn-default">Próximo passo</button>
-            </td>
-        </tr>
-        </tbody>
     </table>
 </div>

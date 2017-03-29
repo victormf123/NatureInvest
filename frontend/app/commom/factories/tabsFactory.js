@@ -2,7 +2,7 @@
  * Created by matheus on 11/03/17.
  */
 (function () {
-   angular.module('natureInvest').factory('tabs', [ TabsFactory ])
+   angular.module('natureInvest').factory('tabs', [ TabsFactory ]);
 
    function TabsFactory() {
 
@@ -10,12 +10,14 @@
            tabInfoBasic = false,
            tabHistory = false,
            tabRecompensa = false,
-           tabEquipe = false
+           tabEquipe = false,
+           tabDescRecompensa = false
        }){
            owner.tabInfoBasic = tabInfoBasic;
            owner.tabHistory = tabHistory;
            owner.tabRecompensa = tabRecompensa;
            owner.tabEquipe = tabEquipe;
+           owner.tabDescRecompensa = tabDescRecompensa;
        }
 
         return { show }

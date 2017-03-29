@@ -1,0 +1,188 @@
+/*
+    ////////////////////////////////
+    //// Midia Query min-width  ///
+    //////////////////////////////
+*/
+
+@media screen and (min-width: 768px) {
+
+}
+
+/*
+    ///////////////////////////////
+    //// Costumização Header  ////
+    /////////////////////////////
+*/
+.ni-login{
+    margin-top: 15px;
+}
+
+.amenu{
+    border-bottom: solid 3px;
+    border-color: #67737f;
+    background-color: transparent;
+}
+#criarCampanha:active{
+    border-bottom: solid 3px;
+    border-color: #67737f;
+}
+#comoFunciona:active{
+    border-bottom: solid 3px;
+    border-color: #67737f;
+}
+#a-gray{
+    color: #66738d;
+}
+#a-gray:hover{
+    color: #66738d;
+    text-decoration: underline;
+}
+
+.ni-navbar{
+    background-color: transparent;
+    border-color: transparent;
+}
+.ni-nav-ul{
+    margin-top: 15px;
+}
+.bt-search{
+    background-color: transparent;
+    border-color: transparent;
+}
+.bt-search:hover{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/*
+    ////////////////////////////
+    //// Costumização corpo ///
+    //////////////////////////
+*/
+body{
+    background: #f2f2f2;
+}
+
+/*
+    //////////////////////////////////////////
+    //// Costumização formulario Campanha ///
+    ////////////////////////////////////////
+*/
+.escopo{
+    height: 555px;
+}
+#txtTitulo{
+    width: 100%;
+}
+.tr-custom-form{
+    margin-top: 15px;
+    height: 55px;
+    border-radius: 10px;
+    background: #e5e5e5;
+}
+.tr-custom-textarea{
+    margin-top: 15px;
+    height: 230px;
+    border-radius: 10px;
+    background: #e5e5e5;
+}
+.tr-custom-form-recompensa{
+    margin-top: 15px;
+    height: 255px;
+    border-radius: 10px;
+    background: #e5e5e5;
+}
+.tr-custom-form-equipe{
+    margin-top: 15px;
+    height: 215px;
+    border-radius: 10px;
+    background: #e5e5e5;
+}
+.format{
+    position: absolute;
+    top: 1px;
+}
+
+.espaco{
+    margin-left: 3%;
+}
+.espaco-right{
+    margin-right: 5%;
+}
+.bt-green{
+    background: #518e2b;
+    color: #fffff4;
+}
+.bt-green:hover{
+    background: #417e21;
+    color: #fffff4;
+}
+.bt-red{
+    background: #f4f2f1;
+    color: #fffff4;
+}
+
+/*
+    /////////////////////////////
+    //// Costumização footer ///
+    ///////////////////////////
+*/
+
+.footer{
+    background-color: #687480;
+    height: 550px;
+    margin-top: 40px;
+    color: #fffff4;
+    clear: both;
+}
+
+.row-logo{
+    margin-top: 55px;
+}
+
+.ni-container{
+    position: absolute;
+    margin-top: 115px;
+}
+
+.footer a{
+    color: #fffff4;
+}
+.footer a:hover{
+    color: #fffff4;
+    text-decoration: underline;
+}
+.footer-left{
+    position: absolute;
+    float: left;
+}
+.footer-right{
+    position: absolute;
+    float: right;
+}
+.bt-green-footer{
+    background: #518e2b;
+    color: #fffff4;
+    border: none;
+}
+.bt-legend-footer{
+    background: transparent;
+    color: #fffff4;
+    border: solid 1px #518e2b;
+}
+.bt-legend-footer:hover{
+    background: #417e21;
+    color: #fffff4;
+    border: none;
+    text-decoration: none;
+}
+.bt-legend-footer:active{
+    background:#417e21;
+    color: #fffff4;
+    border: none;
+}
+.bt-green-footer:hover{
+    background: #417e21;
+    color: #fffff4;
+    border: none;
+}

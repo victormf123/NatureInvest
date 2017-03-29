@@ -1,49 +1,62 @@
 <div class="row">
-    <table class="table">
-        <tbody class="form-group" ng-repeat="equipe in caCtrl.campanha.equipe">
-            <tr>
-                <td>
+    <div class="tr-custom-form-equipe" ng-repeat="equipe in caCtrl.listas.equipe">
+        <table class="table">
+            <tr class="form-group">
+                <td class="col-lg-4">
                     <label>Nome</label>
                 </td>
-                <td>
+                <td class="col-lg-14">
                     <input ng-model="equipe.nome" type="text" name="nome" class="form-control">
                 </td>
             </tr>
-            <tr>
-                <td>
+            <tr class="form-group">
+                <td class="col-lg-4">
                     <label>Email</label>
                 </td>
-                <td>
+                <td class="col-lg-14">
                     <input ng-model="equipe.email" type="text" name="email" class="form-control">
                 </td>
             </tr>
-            <tr>
-                <td>
+            <tr class="form-group">
+                <td class="col-lg-4">
                     <label>Telefone</label>
                 </td>
-                <td>
+                <td class="col-lg-14">
                     <input ng-model="equipe.telefone" type="text" name="telefone" class="form-control">
                 </td>
             </tr>
-            <tr>
-                <td>
+            <tr class="form-group">
+                <td class="col-lg-4">
                     <label>Função</label>
                 </td>
-                <td>
+                <td class="col-lg-14">
                     <input ng-model="equipe.funcao" type="text" name="funcao" class="form-control">
                 </td>
             </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <div class="form-group">
-                        <button type="button" ng-click="caCtrl.addEquipe($index)" class="btn btn-default">Adicionar Membro</button>
-                    </div>
+        </table>
+    </div>
+
+    <div class="tr-custom-form">
+        <table class="table">
+            <tr class="form-group">
+                <td class="col-lg-4">
+                    <button type="button" ng-click="caCtrl.addEquipe($index)" class="btn btn-default bt-green">Adicionar Membro</button>
+                </td>
+                <td class="col-lg-14">
+
                 </td>
             </tr>
-        </tbody>
-    </table>
-    <div class="form-group">
-        <button type="button" ng-click="caCtrl.createEquipe(caCtrl.idCampanha)" class="btn btn-default">Próximo passo</button>
+        </table>
     </div>
+
+    <table class="table">
+        <tr class="form-group">
+            <td class="col-lg-4">
+                <button type="button" ng-click="caCtrl.createEquipe(caCtrl.campanha)" class="btn btn-default bt-green">Próximo passo</button>
+            </td>
+            <td class="col-lg-14">
+
+            </td>
+        </tr>
+    </table>
 </div>

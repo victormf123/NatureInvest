@@ -7,6 +7,7 @@ const Usuario = require('./usuarios').getModel();
 const Equipe = require('./equipe').getModel();
 const Recompensa = require('./recompensa').getModel();
 const biografia_campanha = require('./biografia_campanha').getModel();
+const impactoQuantitativo = require('./impactoQuantitativo').getModel();
 
 var model = null;
 
@@ -15,6 +16,7 @@ exports.getModel = function(){
         model = Db.define('campanha',definition, options);
 
         model.hasMany(Recompensa);
+        model.hasMany(impactoQuantitativo);
         model.hasMany(Equipe);
         model.belongsTo(Usuario);
         model.hasOne(biografia_campanha);

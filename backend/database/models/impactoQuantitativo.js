@@ -1,15 +1,18 @@
 /**
+ * Created by matheus on 27/03/17.
+ */
+
+/**
  * Created by matheus on 27/02/17.
  */
 const Sql = require('sequelize');
 const Db = require('../');
 
-
 var model = null;
 
 exports.getModel = function(){
     if (model == null){
-        model = Db.define('biografia_campanha',definition, options);
+        model = Db.define('impactoQuantitativo',definition, options);
 
     }
 
@@ -23,15 +26,14 @@ const definition = {
         autoIncrement   : true,
         unique          : true
     },
-    descricao_projeto: {
+    descricao: {
         type            :Sql.TEXT,
-        allowNull       : false
+        allowNull       : true
     },
-    pessoas_envolvida: {
+    quantidade: {
         type            :Sql.TEXT,
-        allowNull       : false
+        allowNull       : true
     }
-
 };
 
 const options = {
