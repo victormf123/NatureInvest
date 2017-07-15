@@ -37,3 +37,14 @@ exports.listaRecompensa = function (req, resp) {
         });
 
 };
+exports.pegarRecompensasPorCampanha = function (request, response) {
+    Recompensa.findAll({where: {campanhaId: request.params.id}})
+        .then(function (recompensas) {
+            response(recompensas);
+        })
+
+        .catch(function (err) {
+            console.log(err);
+            response(err).code(401);
+        });
+};

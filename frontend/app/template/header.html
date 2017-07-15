@@ -1,9 +1,15 @@
 
 <div class="row">
-    <div class="col-sm-18 ni-login">
+    <div class="col-sm-18 ni-login" ng-controller="LoginCrtl as logCtrl">
         <div class="navbar-right">
-            <a id="a-gray" href="#">login</a> | <a class="btn btn-default bt-green" href="#">criar conta</a>
+            <div ng-if="logCtrl.tabLogado">
+                Olá {{logCtrl.usuario.nome}} | <a class="btn btn-default bt-green" ng-click="logCtrl.Logout()">Logout</a>
+            </div>
+            <div ng-if="logCtrl.tabLogin">
+                <a id="a-gray" ui-sref="Login">login</a> | <a class="btn btn-default bt-green" ui-sref="criarConta">criar conta</a>
+            </div>
         </div>
+
     </div>
 </div>
 <div class="row">
@@ -32,7 +38,7 @@
                             <li><a href="/report/">Dashboard</a></li>
                             <li><a href="/bundles/naturebase/images/forum1.jpg" target="_blank">Fórum Índice</a></li>
                             <li><a href="/bundles/naturebase/images/forum2.jpg" target="_blank">Fórum Tópico</a></li>
-                            <li><a href="/project/evaluation">Avaliação</a></li>
+                            <li><a ui-sref="avaliacao">Lista de Avaliações</a></li>
                             <li><a href="/project/closing">Fechamento</a></li>
                         </ul></li>
                 </ul>

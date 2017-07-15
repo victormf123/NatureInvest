@@ -48,7 +48,7 @@ exports.route = function (server) {
                 params:{
                     id      : Joi.number().integer().required()
                 }
-            },
+            },/*
             auth: {
                 strategy: 'session'
             },
@@ -56,7 +56,7 @@ exports.route = function (server) {
                 'hapiAuthorization': {
                     role: Project.values.roles.admin
                 }
-            }
+            }*/
         }
     });
 
@@ -71,10 +71,11 @@ exports.route = function (server) {
                     pass    : Joi.string().max(255).required()
                 }
             },
+            /*
             auth: {
                 strategy: 'session',
                 mode: 'try'
-            }
+            }*/
         }
     });
 
@@ -83,9 +84,9 @@ exports.route = function (server) {
         path: '/user/logout',
         config: {
             handler: Handler.logout,
-            auth: {
+            /*auth: {
                 strategy: 'session'
-            }
+            }*/
         }
     });
 };

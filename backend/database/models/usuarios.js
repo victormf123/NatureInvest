@@ -3,14 +3,14 @@
  */
 const Sql = require('sequelize');
 const Db = require('../');
-//const Campanha = require('./campanha').getModel();
+const rlUserRoles = require('./rlUsersRoles').getModel();
 
 var model = null;
 
 exports.getModel = function(){
     if (model == null){
         model = Db.define('usuarios',definition, options);
-  //      model.hasMany(Campanha);
+        model.hasMany(rlUserRoles);
     }
     return model;
 };
@@ -23,7 +23,7 @@ const definition = {
     },
     nome : {
         type            : Sql.STRING,
-        allowNull       : false
+        allowNull       : true
     },
     email : {
         type            : Sql.STRING,
@@ -35,19 +35,31 @@ const definition = {
     },
     localidade : {
         type            : Sql.STRING,
-        allowNull       : false
+        allowNull       : true
     },
     funcao: {
         type            : Sql.STRING,
-        allowNull       : false
+        allowNull       : true
     },
     biografia: {
         type            : Sql.TEXT,
-        allowNull       : false
+        allowNull       : true
     },
     website: {
         type            : Sql.STRING,
-        allowNull       : false
+        allowNull       : true
+    },
+    idfacebook: {
+        type            : Sql.STRING,
+        allowNull       : true
+    },
+    idgoogle: {
+        type            : Sql.STRING,
+        allowNull       : true
+    },
+    urlimage:{
+        type            : Sql.STRING,
+        allowNull       : true
     }
 };
 

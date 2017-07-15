@@ -1,0 +1,39 @@
+<section class="content" ng-controller="CadastroCrtl as cadCtrl">
+    <div class="row">
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3 tr-custom-login">
+                <table class="table">
+                    <tr class="form-group">
+                        <td>
+                            <label class="control-label">Email</label>
+                        </td>
+                        <td>
+                            <input  type="text" ng-model="cadCtrl.login.email" name="email" class="form-control">
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td>
+                            <label class="control-label">Senha</label>
+                        </td>
+                        <td>
+                            <input type="password" ng-model="cadCtrl.login.password"  name="senha" class="form-control">
+                        </td>
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr class="form-group">
+                        <td>
+                            <button ng-click="cirarConta()" class="form-control btn btn-default bt-green">Criar Conta</button>
+                        </td>
+                    </tr>
+                    <tr class="form-group">
+                        <td>
+                            <button type="submit" ng-click="onFBLogin()" class="btn btn-default bt-green">facebook</button>
+                            <button type="submit" ng-click="onGoogleLogin()" class="btn btn-default bt-green">G+</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

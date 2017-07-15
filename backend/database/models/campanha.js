@@ -8,6 +8,8 @@ const Equipe = require('./equipe').getModel();
 const Recompensa = require('./recompensa').getModel();
 const biografia_campanha = require('./biografia_campanha').getModel();
 const impactoQuantitativo = require('./impactoQuantitativo').getModel();
+const campanhaCategoria = require('./campanha_categoria').getModel();
+
 
 var model = null;
 
@@ -20,6 +22,8 @@ exports.getModel = function(){
         model.hasMany(Equipe);
         model.belongsTo(Usuario);
         model.hasOne(biografia_campanha);
+        model.belongsTo(campanhaCategoria);
+
     }
     return model;
 };
@@ -44,6 +48,10 @@ const definition = {
     },
     status:{
       type              :Sql.STRING,
+        allowNull       :false
+    },
+    imagem:{
+        type              :Sql.STRING,
         allowNull       :false
     },
     localidade: {

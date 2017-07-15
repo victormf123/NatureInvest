@@ -23,6 +23,10 @@ const definition = {
         autoIncrement   : true,
         unique          : true
     },
+    link_youtube: {
+        type            :Sql.STRING,
+        allowNull       : false
+    },
     descricao_projeto: {
         type            :Sql.TEXT,
         allowNull       : false

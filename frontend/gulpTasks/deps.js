@@ -21,7 +21,12 @@ gulp.task('deps.js', function () {
         'node_modules/moment/moment.js',
         'node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js',
         'node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js',
-        'node_modules/angular-momentjs/angular-momentjs.js'
+        'node_modules/angular-momentjs/angular-momentjs.js',
+        'node_modules/angular-ui-bootstrap/dist/ui-boostrap-tpls.js',
+        'node_modules/angular-ui-bootstrap/dist/ui-boostrap.js',
+        'node_modules/ngUpload/ng-upload.js',
+
+
 
     ])
         .pipe(uglify())
@@ -36,7 +41,9 @@ gulp.task('deps.css', function () {
         'node_modules/admin-lte/dist/css/AdminLTE.min.css',
         'node_modules/admin-lte/dist/css/skins/_all-skins.min.css',
         'node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
-        '/summernote/summernote.css'
+        '/summernote/summernote.css',
+        'node_modules/angular-ui-bootstrap/dist/ui-boostrap-csp.css',
+        'app/assets/css/NI.css',
     ])
         .pipe(uglifycss({"uglyComments": true}))
         .pipe(concat('deps.min.css'))

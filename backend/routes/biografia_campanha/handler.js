@@ -38,5 +38,13 @@ exports.listaBiografiaCampanha = function (req, resp) {
             console.log(err);
             resp().code(401);
         });
-
+};
+exports.pegarUmaBiografia = function (request, response) {
+    biografia_campanha.findOne({where: {campanhaId: request.params.id}})
+        .then(function (biografia) {
+            response(biografia);
+        }).catch(function (err) {
+            console.log(err);
+            response(err);
+        });
 };

@@ -1,0 +1,157 @@
+<section ng-controller="ListaAvalicacoesCrtl as avalCrtl">
+    <h1>Lista de projetos em Avaliações</h1>
+
+    <div class="row">
+        <div class="container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>titulo</th>
+                    <th>orcamento</th>
+                    <th>status</th>
+                    <th>localidade</th>
+                    <th>data Inicial</th>
+                    <th>data Final</th>
+                    <th>criado em</th>
+                    <th>Ações</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr class="form-group" ng-repeat="item in avalCrtl.campanhas">
+                        <td >
+                            {{item.id}}
+                        </td>
+                        <td >
+                            {{item.titulo}}
+                        </td>
+                        <td>
+                            {{item.orcamento }} {{lista.moeda}}
+                        </td>
+                        <td>
+                            {{item.status}}
+                        </td>
+                        <td>
+                            {{item.localidade}}
+                        </td>
+                        <td>
+                            {{item.dataInicial}}
+                        </td>
+                        <td>
+                            {{item.dataFinal}}
+                        </td>
+                        <td>
+                            {{item.createdAt}}
+                        </td>
+                        <td>
+                            <button ng-click="avalCrtl.open(item.id)" class="btn btn-default bt-green" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" ><span class="glyphicon glyphicon-saved"></span></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <h3>Informações Basicas</h3>
+                    <hr>
+                    <br/><h2>{{avalCrtl.campanha.titulo}}</h2>
+                    <br/><strong>Orçamento:</strong>{{avalCrtl.campanha.orcamento}} {{avalCrtl.campanha.moeda}}
+                    <br/><strong>Status:</strong>{{avalCrtl.campanha.status}}
+                    <br/><strong>Localidade:</strong> {{avalCrtl.campanha.localidade}}
+                    <br/><strong>Previsão de Inicio:</strong> {{avalCrtl.campanha.dataInicial}}
+                    <br/><strong>Previsão de Termino:</strong> {{avalCrtl.campanha.dataFinal}}
+
+                    <br/><h3>História do Projeto</h3>
+                    <hr>
+                    <br/>
+                    <br/><h4>Descrição do Projeto</h4>
+                    <br/><div class="text-justify">{{avalCrtl.historia.descricao_projeto}}</div>
+                    <br/><h4>Pessoas Envolvidas</h4>
+                    <hr>
+                    <br/>
+                    <br/><div class="text-justify">{{avalCrtl.historia.pessoas_envolvida}}</div>
+                    <br/>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Impacto</td>
+                            <td>quantidade</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in avalCrtl.impacto_quantitativo" >
+                            <td>{{ item.descricao }}</td>
+                            <td>{{ item.quantidade }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <br/><h3>Recompensas</h3>
+                    <hr>
+                    <br/>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Existe Recompensa</td>
+                            <td>Valor</td>
+                            <td>Descrição da recompensa</td>
+                            <td>Limitado</td>
+                            <td>Quantas recompensas</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in avalCrtl.recompensa" >
+                            <td>{{ item.recompensa }}</td>
+                            <td>{{ item.valor }} {{ item.detalhes }}</td>
+                            <td>{{ item.descricao }}</td>
+                            <td>{{ item.limitado }}</td>
+                            <td>{{ item.limite }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br/><h3>Equipe</h3>
+                    <hr>
+                    <br/>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Nome Integrante Equipe</td>
+                            <td>Email</td>
+                            <td>Telefone</td>
+                            <td>Função</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in avalCrtl.equipe" >
+                            <td>{{ item.nome }}</td>
+                            <td>{{ item.mail }}</td>
+                            <td>{{ item.telefone }}</td>
+                            <td>{{ item.funcao }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button ng-click="avalCrtl.Aproved(avalCrtl.campanha.id)" class="btn btn-default bt-green" ><span class="glyphicon glyphicon-saved"></span></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

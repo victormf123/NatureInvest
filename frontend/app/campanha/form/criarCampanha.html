@@ -6,8 +6,9 @@
                 <td class="col-lg-4">
                     <label>Imagem do Projeto</label>
                 </td>
-                <td class="col-lg-14">
-                    <button type="button" class="btn btn-default bt-green"><span class="espaco-right glyphicon glyphicon-folder-open" aria-hidden="true"></span>Procurar arquivo</button>
+                <td class="col-lg-14" >
+                   <!-- <button type="button" class="btn btn-default bt-green"><span class="espaco-right glyphicon glyphicon-folder-open" aria-hidden="true"></span>Procurar arquivo</button>-->
+                    <input type="file" id="arquivoInput" />
                 </td>
             </tr>
         </table>
@@ -20,6 +21,19 @@
                 </td>
                 <td class="col-lg-14">
                     <input ng-model="caCtrl.campanha.titulo" type="text"  name="titulo" class="counter form-control">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tr-custom-form">
+        <table class="table">
+            <tr class="form-group">
+                <td class="col-lg-4">
+                    <label class="control-label">Categoria</label>
+                </td>
+                <td class="col-lg-14">
+                    <select name="categoria" id="categoria" data-ng-model="caCtrl.categoria" ng-options="categorias.categoria for categorias in categorias track by categorias.id" class="counter form-control">
+                    </select>
                 </td>
             </tr>
         </table>

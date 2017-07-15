@@ -15,6 +15,7 @@ exports.route = function (server) {
             handler: Handler.novaBiografiaCampanha,
             validate: {
                 payload: {
+                    link_youtube: Joi.string().allow(''),
                     descricao_projeto: Joi.string().required(),
                     pessoas_envolvida: Joi.string().required(),
                     campanhaId: Joi.number()
@@ -41,6 +42,7 @@ exports.route = function (server) {
                     id: Joi.number().required()
                 },
                 payload: {
+                    link_youtube: Joi.string(),
                     descricao_projeto: Joi.string().required(),
                     pessoas_envolvida: Joi.string().required(),
                     impacto_quantitativo: Joi.string().max(255).required(),
@@ -63,6 +65,27 @@ exports.route = function (server) {
         path: '/biografiacampanha/',
         config: {
             handler: Handler.listaBiografiaCampanha
+            /* for now user will be created default,
+             auth: {
+             strategy: 'session'
+             },
+             plugins: {
+             'hapiAuthorization': {
+             role: Project.values.roles.admin
+             }
+             }*/
+        }
+    });
+    server.route({
+        method: 'GET',
+        path: '/biografiacampanha/{id}',
+        config: {
+            handler: Handler.pegarUmaBiografia,
+            validate: {
+                params: {
+                    id: Joi.number().required()
+                }
+            }
             /* for now user will be created default,
              auth: {
              strategy: 'session'

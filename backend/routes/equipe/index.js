@@ -76,11 +76,12 @@ exports.route = function (server) {
         }
     });
 
+
     server.route({
         method: 'GET',
         path: '/equipe/{id}',
         config: {
-            handler: Handler.pegarUmaEquipe,
+            handler: Handler.pegaEquipePorCampanha,
             validate: {
                 params: {
                     id: Joi.number().required()
@@ -97,4 +98,4 @@ exports.route = function (server) {
              }*/
         }
     });
-}
+};

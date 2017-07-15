@@ -53,3 +53,15 @@ exports.pegarUmaEquipe = function (req, resp) {
 
 };
 
+exports.pegaEquipePorCampanha = function (request, response) {
+    Equipe.findAll({where: {campanhaId: request.params.id}})
+        .then(function (equipe) {
+            response(equipe);
+        })
+
+        .catch(function (err) {
+            console.log(err);
+            response(err).code(401);
+        });
+};
+

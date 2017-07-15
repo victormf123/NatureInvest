@@ -1,7 +1,7 @@
 /**
  * Created by bruno on 06/18/16.
  */
-
+const usuario = require('../../database/models/usuarios').getModel();
 
 
 exports.registerAdmin = function (request, response){
@@ -10,7 +10,7 @@ exports.registerAdmin = function (request, response){
 exports.createNewUser = createNewUser;
 
 function createNewUser(request, response, role){
-   /* var data =  request.payload;
+    var data =  request.payload;
 
     data.role = role;
     data.pass = Crypt.createHash(data.pass);
@@ -32,7 +32,7 @@ function createNewUser(request, response, role){
         }
 
         response(responseData);
-    });*/
+    });
 };
 
 exports.updateUser = function (request, response){/*
@@ -90,7 +90,7 @@ exports.loginUser = function (request, response) {/*
             });
 
             promise.catch(function (){
-                rresponseData.error = true;
+                responseData.error = true;
                 responseData.data.type = 'password';
                 responseData.data.value = 'auth error';
 

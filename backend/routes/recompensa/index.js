@@ -80,4 +80,26 @@ exports.route = function (server) {
              }*/
         }
     });
-}
+
+    server.route({
+        method: 'GET',
+        path: '/recompensa/{id}',
+        config: {
+            handler: Handler.pegarRecompensasPorCampanha,
+            validate: {
+                params: {
+                    id: Joi.number().required()
+                }
+            }
+            /* for now user will be created default,
+             auth: {
+             strategy: 'session'
+             },
+             plugins: {
+             'hapiAuthorization': {
+             role: Project.values.roles.admin
+             }
+             }*/
+        }
+    });
+};

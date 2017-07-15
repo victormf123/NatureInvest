@@ -7,10 +7,12 @@ const routesDirName = './routes/';
 const FileSystem = require('fs');
 const Path = require('path');
 const Project = require('./project');
-
 const Hapi = require('hapi');
 
+
+
 var server = new Hapi.Server();
+
 
 server.connection({
     host: '0.0.0.0',

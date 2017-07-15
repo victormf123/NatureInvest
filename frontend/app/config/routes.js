@@ -15,7 +15,16 @@ angular.module('natureInvest').config([
         }).state('historiaProjeto',{
             url: "/historiaProjeto",
             templateUrl:"campanha/criarHistoriaProjeto.html",
-        });
+        }).state('criarConta',{
+            url: "/criarConta",
+            templateUrl:"cadastro/criarConta.html",
+        }).state('Login',{
+            url: "/login",
+            templateUrl:"login/login.html",
+        }).state('avaliacao', {
+            url: "/avaliacao",
+            templateUrl: "/avaliacao/listaAvaliacoes.html",
+        }).sta;
 
         $urlRouterProvider.otherwise('/home');
     }

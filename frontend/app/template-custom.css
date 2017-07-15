@@ -121,6 +121,19 @@ body{
     background: #f4f2f1;
     color: #fffff4;
 }
+/*
+    ////////////////////////////
+    //// Costumização login ///
+    //////////////////////////
+*/
+.tr-custom-login{
+    margin-top: 15px;
+    height: 230px;
+    border-radius: 10px;
+    background: #e5e5e5;
+    margin-top: 100px;
+}
+
 
 /*
     /////////////////////////////

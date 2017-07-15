@@ -3,6 +3,7 @@
  */
 (function () {
         angular.module('natureInvest').controller('CampanhaCrtl', [
+        '$cookies',
         '$scope',
         '$http',
         'tabs',
@@ -10,49 +11,81 @@
 
     ]);
 
-    function campanhaController($scope, $http, tabs) {
+    function campanhaController($cookies, $scope, $http, tabs) {
         const vm = this;
 
 
+        $scope.complete = function(content) {
+            console.log(content); // process content
+        };
         vm.add = function () {
           vm.users.push({name: 'Bruno'});
         };
 
         vm.refresh = function () {
+            instanciarCategorias()
+            vm.categoria = ''
             vm.listas = { equipe: [{}], recompensa: [{}], impactos: [{}]};
             tabs.show(vm, {tabInfoBasic:true});
 
         };
 
-        vm.createCampanha = function () {
+        function instanciarCategorias() {
+            const url = 'http://localhost:8001/campanhaCategoria/';
 
-            const url = 'http://localhost:8001/campanha/';
-
-            let campanha = {
-                'titulo' : vm.campanha.titulo,
-                'orcamento': vm.campanha.orcamento,
-                'moeda': vm.campanha.moeda,
-                'status': 'Em Analise',
-                'localidade': vm.campanha.localidade,
-                'dataInicial':new Date(vm.campanha.dataInicial),
-                'dataFinal': new Date(vm.campanha.dataFinal),
-            };
-
-
-
-            $http.post(url, campanha).then(function (response) {
-                vm.campanha = response.data;
-                vm.listas = { equipe: [{}], recompensa: [{}], impactos: [{}]};
-                console.log(response.data);
+            $http.get(url).then(function (response) {
+                $scope.categorias = response.data
             }).catch(function (response) {
-                console.log(response.data);
-            });
+                console.log(response.data)
+            })
+        }
+
+        vm.createCampanha = function () {
+            let id = $cookies.get('userId');
+            if(id != undefined){
+                let formData = new FormData();
+                let arquivo = document.getElementById("arquivoInput").files[0];
+                formData.append("file", arquivo);
+                let xhr = new XMLHttpRequest();
+                xhr.onload = function(e) {
+                    //console.log('/NIexpress'+ xhr.response.slice(1))
+                    let campanha = {
+                        'titulo' : vm.campanha.titulo,
+                        'orcamento': vm.campanha.orcamento,
+                        'moeda': vm.campanha.moeda,
+                        'status': 'Em Analise',
+                        'imagem': '/NIexpress'+ xhr.response.slice(1),
+                        'campanhaCategoriumId': vm.categoria.id,
+                        'usuarioId': id,
+                        'localidade': vm.campanha.localidade,
+                        'dataInicial':new Date(vm.campanha.dataInicial),
+                        'dataFinal': new Date(vm.campanha.dataFinal),
+                    };
+                    console.log(campanha)
+                    /*const url = 'http://localhost:8001/campanha/';
+
+                    $http.post(url, campanha).then(function (response) {
+                        vm.campanha = response.data;
+                        vm.listas = { equipe: [{}], recompensa: [{}], impactos: [{}]};
+                        console.log(response.data);
+                    }).catch(function (response) {
+                        console.log(response.data);
+                    });*/
+
+                };
+
+                xhr.open("POST", "http://localhost:8003/api/upload");
+                xhr.send(formData);
+
+
+            }
 
         };
 
         vm.createHistoriaProjeto = function (campanha) {
             const url = 'http://localhost:8001/biografiacampanha/';
             let biografiacampanha = {
+                'link_youtube': vm.biografiacampanha.link_youtube,
                 'descricao_projeto' : vm.biografiacampanha.descricao_projeto,
                 'pessoas_envolvida': vm.biografiacampanha.pessoas_envolvida,
                 'campanhaId': campanha.id
