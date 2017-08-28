@@ -22,12 +22,6 @@ gulp.task('deps.js', function () {
         'node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js',
         'node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js',
         'node_modules/angular-momentjs/angular-momentjs.js',
-        'node_modules/angular-ui-bootstrap/dist/ui-boostrap-tpls.js',
-        'node_modules/angular-ui-bootstrap/dist/ui-boostrap.js',
-        'node_modules/ngUpload/ng-upload.js',
-
-
-
     ])
         .pipe(uglify())
         .pipe(concat('deps.min.js'))

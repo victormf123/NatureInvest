@@ -24,7 +24,10 @@ angular.module('natureInvest').config([
         }).state('avaliacao', {
             url: "/avaliacao",
             templateUrl: "/avaliacao/listaAvaliacoes.html",
-        }).sta;
+        }).state('singlePageCampanha', {
+            url: '/singlePage',
+            templateUrl: "/singlePage/singlePage.html",
+        });
 
         $urlRouterProvider.otherwise('/home');
     }

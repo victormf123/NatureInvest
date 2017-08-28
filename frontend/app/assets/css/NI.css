@@ -1,14 +1,97 @@
-#slides_control > div{
-    height: 200px;
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,latin-ext,greek-ext,greek,vietnamese,cyrillic,cyrillic-ext);
+
+body{
+    background-color: #f6f5f4;
 }
-img{
-    margin:auto;
-    width: 400px;
+@font-face {
+    font-family: firasans;
+    src: url(assets/fonts/FiraSans-Regular.otf);
 }
-#slides_control {
-    position:absolute;
-    width: 400px;
-    left:50%;
-    top:20px;
-    margin-left:-200px;
+
+.informacoes{
+    font-size: 14px;
+}
+.descricoes_destaque{
+    font-size: 12px;
+    font-family: Roboto !important;
+}
+.descricoes_projeto{
+    font-size: 18px;
+    font-family: Roboto !important;
+}
+
+.slide-text{
+    font-family: Roboto !important;
+    background-color: rgba(101,115,125, 0.7);
+    height: 73px;
+    width: 500px;
+    padding-bottom: 70px;
+}
+.item > .carousel-caption{
+    right:35%;
+    left: 10%;
+}
+.img_destaque{
+    float: left;
+    margin-left: 10%;
+    width: 301px;
+    height: 201px;
+}
+.DestaqueTexto{
+    float: left;
+    margin-left: 3%;
+    width: 369.312px;
+    height: 322px;
+}
+.DestaqueCategorias{
+    float: left;
+    margin-left: 4%;
+}
+.campanhasDestaque{
+    margin-bottom: 50px;
+    height: 100%;
+}
+.MargTop50{
+    margin-top: 50px;
+}
+
+.MargTop25{
+    margin-top: 25px;
+}
+
+.MargTop15{
+    margin-top: 15px;
+}
+
+.footer{
+    margin-top: 60px;
+    width: 100%;
+}
+
+.escopo{
+    height: 2100px;
+}
+
+.iconsize{
+    font-size: 30px;
+}
+
+.categoriasCampanha{
+    font-size: 18px;
+    text-decoration: none;
+    list-style: none;
+}
+.categoriasCampanha>a{
+    font-family: Roboto !important;
+    color: #65737d;
+}
+
+.categoriasCampanha>a:hover{
+    color: #4ca241;
+}
+
+.espacoRight{
+    margin-right: 2%;
 }

@@ -8,7 +8,6 @@ angular.module('natureInvest', [
     'ngAnimate',
     'toastr',
     'ngCookies',
-    'ui.bootstrap'
 ]);
 
 /*

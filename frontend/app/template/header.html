@@ -1,68 +1,39 @@
-
-<div class="row">
-    <div class="col-sm-18 ni-login" ng-controller="LoginCrtl as logCtrl">
-        <div class="navbar-right">
-            <div ng-if="logCtrl.tabLogado">
-                Olá {{logCtrl.usuario.nome}} | <a class="btn btn-default bt-green" ng-click="logCtrl.Logout()">Logout</a>
-            </div>
-            <div ng-if="logCtrl.tabLogin">
-                <a id="a-gray" ui-sref="Login">login</a> | <a class="btn btn-default bt-green" ui-sref="criarConta">criar conta</a>
-            </div>
-        </div>
-
+<nav class="nav justify-content-end" ng-controller="LoginCrtl as logCtrl">
+    <div ng-if="logCtrl.tabLogado">
+        Olá {{logCtrl.usuario.nome}} | <a class="btn btn-default bt-green" ng-click="logCtrl.Logout()">Logout</a>
     </div>
-</div>
-<div class="row">
-    <nav class="navbar navbar-default ni-navbar" ng-controller="headerCrtl as heaCtrl">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header" id="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a ng-click="heaCtrl.clickInicio()" class="navbar-brand" ui-sref="home"><img src="../assets/img/marca-nature-invest.png" alt="Example" /></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="espaco ni-nav-ul">
-                <ul class="nav navbar-nav">
-                    <li ng-click="heaCtrl.clickInvista()" ng-class="{amenu: heaCtrl.tabInvista == true}"><a href>invista<span class="sr-only">(current)</span></a></li>
-                    <li ng-click="heaCtrl.clickCriarCamapanha()" ng-class="{amenu: heaCtrl.tabcriarCampanha == true}"><a ui-sref="tabs">criar campanha</a></li>
-                    <li ng-click="heaCtrl.clickComoFunciona()" ng-class="{amenu: heaCtrl.tabComoFunciona == true}"><a href>como funciona</a></li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">admin <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/report/">Dashboard</a></li>
-                            <li><a href="/bundles/naturebase/images/forum1.jpg" target="_blank">Fórum Índice</a></li>
-                            <li><a href="/bundles/naturebase/images/forum2.jpg" target="_blank">Fórum Tópico</a></li>
-                            <li><a ui-sref="avaliacao">Lista de Avaliações</a></li>
-                            <li><a href="/project/closing">Fechamento</a></li>
-                        </ul></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <p class="navbar-btn">
-                            <a href="#" class="btn btn-default btn-xs bt-green">PT</a>
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
-                        </p>
-                    </li>
-                    <li>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control"  placeholder="Search" >
-                                <button class="btn btn-default bt-green" type="submit">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </div><!-- /.navbar-collapse -->
-    </nav>
-</div>
+    <div ng-if="logCtrl.tabLogin">
+        <a id="a-gray" ui-sref="Login">login</a> | <a class="btn btn-default bt-green" ui-sref="criarConta">criar conta</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="headerCrtl as heaCtrl">
+    <a class="navbar-brand" ng-click="heaCtrl.clickInicio()" href="#">
+        <img src="../assets/img/marca-nature-invest.png" class="d-inline-block align-top img-responsive" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" ng-click="heaCtrl.clickInvista()" ng-class="{amenu: heaCtrl.tabInvista == true}">invista <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-click="heaCtrl.clickCriarCamapanha()" ng-class="{amenu: heaCtrl.tabcriarCampanha == true}" ui-sref="tabs" href="#">criar campanha</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-click="heaCtrl.clickComoFunciona()" ng-class="{amenu: heaCtrl.tabComoFunciona == true}" href="#">como funciona</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a ui-sref="avaliacao">Lista de Avaliações</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

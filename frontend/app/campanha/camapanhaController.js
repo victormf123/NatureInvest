@@ -15,12 +15,6 @@
         const vm = this;
 
 
-        $scope.complete = function(content) {
-            console.log(content); // process content
-        };
-        vm.add = function () {
-          vm.users.push({name: 'Bruno'});
-        };
 
         vm.refresh = function () {
             instanciarCategorias()
@@ -54,7 +48,7 @@
                         'orcamento': vm.campanha.orcamento,
                         'moeda': vm.campanha.moeda,
                         'status': 'Em Analise',
-                        'imagem': '/NIexpress'+ xhr.response.slice(1),
+                        'imagem': 'http://localhost:8003/'+ xhr.response,
                         'campanhaCategoriumId': vm.categoria.id,
                         'usuarioId': id,
                         'localidade': vm.campanha.localidade,
@@ -62,15 +56,17 @@
                         'dataFinal': new Date(vm.campanha.dataFinal),
                     };
                     console.log(campanha)
-                    /*const url = 'http://localhost:8001/campanha/';
+                    const url = 'http://localhost:8001/campanha/';
 
                     $http.post(url, campanha).then(function (response) {
                         vm.campanha = response.data;
                         vm.listas = { equipe: [{}], recompensa: [{}], impactos: [{}]};
+                        console.log('entrou aqui')
                         console.log(response.data);
                     }).catch(function (response) {
                         console.log(response.data);
-                    });*/
+                        console.log('entou catch')
+                    });
 
                 };
 
@@ -144,6 +140,7 @@
 
         vm.createEquipe = function(campanha){
             const url = 'http://localhost:8001/equipe/';
+            console.log(campanha)
             vm.listas.equipe.forEach(function (resultado) {
                 let equipe = {
                     'nome' : resultado.nome,

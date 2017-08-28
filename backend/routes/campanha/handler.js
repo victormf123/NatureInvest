@@ -5,6 +5,12 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 
 const Campanha = require('../../database/models/campanha').getModel();
+const Usuario = require('../../database/models/usuarios').getModel();
+const Biografia = require('../../database/models/biografia_campanha').getModel();
+const Equipe = require('../../database/models/equipe').getModel();
+const Recompensa = require('../../database/models/recompensa').getModel();
+const  CampanhaCategoria = require('../../database/models/campanha_categoria').getModel();
+
 
 exports.novaCampanha = function (req, resp) {
 
@@ -29,7 +35,7 @@ exports.listarCampanhasEmAvaliacao = function (request, response) {
 };
 
 exports.listaCampanha = function (req, resp) {
-    Campanha.findAll()
+    Campanha.findAll({include: [{model: Usuario}, {model: Biografia}, {model: Equipe}, {model: Recompensa}, {model: CampanhaCategoria}]})
         .then(function (campanha) {
             resp(campanha);
         })
@@ -42,7 +48,7 @@ exports.listaCampanha = function (req, resp) {
 };
 
 exports.pegarUmaCampanha = function (req, resp) {
-    Campanha.findOne({where: {id: req.params.id}})
+    Campanha.findOne({include: [{model: Usuario}, {model: Biografia}, {model: Equipe}, {model: Recompensa}, {model: CampanhaCategoria}]}, {where: {id: req.params.id}})
         .then(function (campanha) {
             resp(campanha);
         })

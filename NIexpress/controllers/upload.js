@@ -15,6 +15,6 @@ module.exports = function(req, res){
         if(err){
             res.status(500).json({error: err})
         }
-        res.send(novo);
+        res.send(req.files.file.name);
     })
 }

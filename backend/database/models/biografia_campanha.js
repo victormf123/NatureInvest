@@ -25,15 +25,15 @@ const definition = {
     },
     link_youtube: {
         type            :Sql.STRING,
-        allowNull       : false
+        allowNull       : true
     },
     descricao_projeto: {
         type            :Sql.TEXT,
-        allowNull       : false
+        allowNull       : true
     },
     pessoas_envolvida: {
         type            :Sql.TEXT,
-        allowNull       : false
+        allowNull       : true
     }
 
 };

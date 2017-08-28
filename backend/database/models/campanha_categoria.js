@@ -25,6 +25,10 @@ const definition = {
     categoria: {
         type            :Sql.STRING,
         allowNull       : false
+    },
+    icon:{
+        type            :Sql.STRING,
+        allowNull       : false
     }
 };
 

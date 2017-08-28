@@ -17,6 +17,7 @@ exports.route = function (server) {
             validate: {
                 payload: {
                     categoria: Joi.string(),
+                    icon: Joi.string(),
                 }
             }/* for now user will be created default,
              auth: {
@@ -41,6 +42,7 @@ exports.route = function (server) {
                 },
                 payload: {
                     categoria: Joi.string(),
+                    icon: Joi.string(),
                 }
             }/* for now user will be created default,
              auth: {

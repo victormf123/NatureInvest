@@ -5,7 +5,6 @@ const Usuarios = require('../../database/models/usuarios').getModel();
 const rlUsersRoles = require('../../database/models/rlUsersRoles').getModel();
 const roles = require('../../database/models/roles').getModel();
 const Crypt = require('../../tools/crypt');
-const Basic = require('hapi-auth-basic');
 /* const Basic = require('hapi-auth-basic'); */
 
 var self = this;

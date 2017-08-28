@@ -1,0 +1,154 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-avatar_fem:before {
+	content: "\e603";
+}
+.icon-anotacoes:before {
+	content: "\e604";
+}
+.icon-anuncio:before {
+	content: "\e606";
+}
+.icon-agua:before {
+	content: "\e608";
+}
+.icon-agricultura:before {
+	content: "\e6aa";
+}
+.icon-avatar_masc:before {
+	content: "\e600";
+}
+.icon-balao .path1:before {
+	content: "\e601";
+	color: rgb(255, 255, 255);
+}
+.icon-balao .path2:before {
+	content: "\e602";
+	margin-left: -0.70703125em;
+	color: rgb(0, 0, 0);
+}
+.icon-bioma:before {
+	content: "\e605";
+}
+.icon-buscar:before {
+	content: "\e607";
+}
+.icon-chains:before {
+	content: "\e637";
+}
+.icon-construcao_sustentavel:before {
+	content: "\e639";
+}
+.icon-conversa:before {
+	content: "\e63d";
+}
+.icon-cronometro:before {
+	content: "\e643";
+}
+.icon-dicas:before {
+	content: "\e647";
+}
+.icon-dropdown:before {
+	content: "\e649";
+}
+.icon-economia_verde:before {
+	content: "\e64b";
+}
+.icon-educaocao_ambiental:before {
+	content: "\e64d";
+}
+.icon-email:before {
+	content: "\e64f";
+}
+.icon-energia:before {
+	content: "\e651";
+}
+.icon-etiqueta:before {
+	content: "\e653";
+}
+.icon-facebook:before {
+	content: "\e665";
+}
+.icon-fechar:before {
+	content: "\e666";
+}
+.icon-fechar2:before {
+	content: "\e667";
+}
+.icon-geoinformacao:before {
+	content: "\e669";
+}
+.icon-home:before {
+	content: "\e66c";
+}
+.icon-leitura:before {
+	content: "\e67f";
+}
+.icon-localizacao:before {
+	content: "\e681";
+}
+.icon-manejo_de_residuos:before {
+	content: "\e683";
+}
+.icon-mapa_localizacao:before {
+	content: "\e687";
+}
+.icon-marinho_e_costeiro:before {
+	content: "\e689";
+}
+.icon-mitigacao_das_mudancas_climaticas:before {
+	content: "\e68b";
+}
+.icon-mobilidade_urbana:before {
+	content: "\e68d";
+}
+.icon-orcamento:before {
+	content: "\e690";
+}
+.icon-pesquisa_comunicacao:before {
+	content: "\e692";
+}
+.icon-protecao_de_especies:before {
+	content: "\e694";
+}
+.icon-responder:before {
+	content: "\e697";
+}
+.icon-restauracao_florestal:before {
+	content: "\e699";
+}
+.icon-seta:before {
+	content: "\e69b";
+}
+.icon-twitter:before {
+	content: "\e69e";
+}
+.icon-web:before {
+	content: "\e6a1";
+}
+.icon-wide:before {
+	content: "\e6a8";
+}

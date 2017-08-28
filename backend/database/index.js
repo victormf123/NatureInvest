@@ -35,5 +35,5 @@ function loadModels(err, models){
         }
     });
     
-    database.sync({force:true});//{force:true}
+    database.sync();//{force:true}
 }

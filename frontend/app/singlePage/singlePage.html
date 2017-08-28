@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="text-center">
+                <h1>{{sPCrtl.campanha.titulo}}</h1>
+                <img src="{{sPCrtl.campanha.imagem}}" class="img-fluid MargTop15" alt="">
+                <p class="text-justify MargTop50 descricoes_projeto">{{sPCrtl.campanha.biografia_campanha.descricao_projeto}}</p>
+                <table class="table MargTop25 informacoes" style="width: 40%" align="center">
+                    <tr>
+                        <td><span class="iconsize {{sPCrtl.campanha.campanha_categorium.icon}}"></span></td>
+                        <td>{{sPCrtl.campanha.campanha_categorium.categoria}}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="iconsize icon-localizacao"></span></td>
+                        <td> {{sPCrtl.campanha.localidade}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{sPCrtl.campanha.moeda}}</td>
+                        <td>{{sPCrtl.campanha.orcamento}}</td>
+                    </tr>
+                </table>
+                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="" ui-sref="" >PAGAR</button>
+            </div>
+        </div>
+        <div class="col-sm-3 sidenav">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Card title</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Card title</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

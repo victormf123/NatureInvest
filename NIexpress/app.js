@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8003;
 var router = express.Router();
 
+app.use(express.static('uploads'));
 app.use('/api', router);
 /*insira as rotas aqui */
 router.route('/upload')

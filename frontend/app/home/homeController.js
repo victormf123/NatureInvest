@@ -11,21 +11,22 @@
     function homeController($scope) {
         const vm = this;
 
-        $scope.myInterval = 3000;
         $scope.slides = [
             {
-                image: 'http://lorempixel.com/400/200/'
+                class: 'active',
+                text: 'Você pode fazer parte da mudança!',
+                image: './assets/img/1195d27_slider-man_1.jpg'
             },
             {
-                image: 'http://lorempixel.com/400/200/food'
+                class: '',
+                text: 'Nature Invest transforma pequenas iniciativas ambientais em grandes resultados',
+                image: './assets/img/c6d8cc1_foto-slider_1.jpg'
             },
             {
-                image: 'http://lorempixel.com/400/200/sports'
-            },
-            {
-                image: 'http://lorempixel.com/400/200/people'
-            }
-        ]
+                class: '',
+                text: 'Nature Invest transforma pequenas iniciativas ambientais em grandes resultados',
+                image: './assets/img/41a5964_foto-slider-2_1.jpg'
+            }]
 
         vm.refresh = function () {
         }

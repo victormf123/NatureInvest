@@ -24,7 +24,7 @@ const definition = {
     },
     recompensa: {
         type            : Sql.BOOLEAN,
-        allowNull       : false
+        allowNull       : true
     },
     valor : {
         type            : Sql.STRING,
